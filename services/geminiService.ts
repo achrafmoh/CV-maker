@@ -1,10 +1,19 @@
 import { GoogleGenAI, Type } from "@google/genai";
-import { CVData, ATSResult } from '../types';
+import { CVData, ATSResult } from './types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+// Use Vite's environment variable syntax
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+// Initialize AI only if API key exists
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export async function analyzeATS(cvData: CVData, jobDescription: string): Promise<ATSResult> {
     const model = "gemini-2.5-flash";
+
+    // Check if API key is configured
+    if (!ai) {
+        throw new Error("Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.");
+    }
 
     const prompt = `
         Analyze the following CV data against the provided job description.
@@ -65,9 +74,14 @@ export async function analyzeATS(cvData: CVData, jobDescription: string): Promis
     }
 }
 
-
 export async function processText(text: string, action: 'expand' | 'shorten' | 'rephrase', context: 'summary' | 'experience description'): Promise<string> {
     const model = "gemini-2.5-flash";
+    
+    // Check if API key is configured
+    if (!ai) {
+        throw new Error("Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your environment variables.");
+    }
+
     let instruction = '';
     let contextText = '';
     
