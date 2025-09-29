@@ -10,5 +10,6 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false
   },
-  base: './' // This is important for Vercel
+  base: './', // This is crucial for Vercel
+  publicDir: 'public' // Add this if you have a public folder
 });
