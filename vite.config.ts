@@ -8,8 +8,12 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: false
+    sourcemap: false,
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
   },
-  base: './', // This is crucial for Vercel
-  publicDir: 'public' // Add this if you have a public folder
+  base: '/'
 });
