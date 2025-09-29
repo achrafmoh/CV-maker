@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live CV Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #f1f5f9; /* bg-slate-100 */
+        font-family: 'Inter', sans-serif;
+      }
+      .font-sans { font-family: 'Inter', sans-serif; }
+      .font-serif { font-family: 'Lora', serif; }
+      .font-mono { font-family: 'Source Code Pro', monospace; }
+
+      .font-serif-body-sans h1,
+      .font-serif-body-sans h2,
+      .font-serif-body-sans h3,
+      .font-serif-body-sans h4,
+      .font-serif-body-sans h5,
+      .font-serif-body-sans h6 {
+          font-family: 'Lora', serif;
+      }
+      .font-serif-body-sans {
+          font-family: 'Inter', sans-serif;
+      }
+
+      /* For Print */
+      @media print {
+        body, html {
+          background: #fff !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        body > * {
+          display: none !important;
+        }
+        #cv-print-area {
+          display: block !important;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 210mm;
+          height: 297mm;
+          box-shadow: none !important;
+          border: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          transform: scale(1) !important;
+        }
+        @page {
+          size: A4;
+          margin: 0;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </body>
+</html>
