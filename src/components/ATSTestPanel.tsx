@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CVData, ATSResult } from '../types';
-import { analyzeATS } from '../services/geminiService';
+import { analyzeATS } from '../geminiService';
 
 interface ATSTestPanelProps {
     cvData: CVData;

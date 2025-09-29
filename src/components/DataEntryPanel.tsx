@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CVData, Experience, Education, Skill, Language, Certificate } from '../types';
-import { processText } from '../services/geminiService';
+import { processText } from '../geminiService';
 
 interface DataEntryPanelProps {
     data: CVData;

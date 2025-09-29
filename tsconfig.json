@@ -13,11 +13,11 @@
     "allowJs": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./*"]  // This should work for root-level files
+      "@/*": ["./src/*"]
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "include": ["**/*"],  // Include all files
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
